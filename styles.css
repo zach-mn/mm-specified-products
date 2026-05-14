@@ -395,9 +395,9 @@ a {
 /* ===== Manufacturers ===== */
 .manufacturers-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -658,7 +658,7 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
     .manufacturers-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
