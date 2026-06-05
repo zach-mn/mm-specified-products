@@ -525,11 +525,23 @@ a {
     background: var(--bg-alt);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 20px 40px;
-    font-weight: 600;
-    font-size: 14px;
-    color: var(--text-light);
-    text-align: center;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.affiliation:hover {
+    box-shadow: var(--shadow);
+    border-color: var(--primary-light);
+}
+
+.affiliation-logo {
+    max-width: 220px;
+    max-height: 80px;
+    object-fit: contain;
 }
 
 /* ===== Contact ===== */
