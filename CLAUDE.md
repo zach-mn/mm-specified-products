@@ -37,7 +37,7 @@ paths rewritten so they reuse master's images and PDFs:
 ```bash
 mkdir -p preview
 for f in index.html styles.css script.js; do
-  git show <branch>:$f | sed 's#\(src\|href\)="images/#="../images/#g; s#\(src\|href\)="catalog/#="../catalog/#g' > preview/$f
+  git show <branch>:$f | sed 's#\(src\|href\)="images/#\1="../images/#g; s#\(src\|href\)="catalog/#\1="../catalog/#g' > preview/$f
 done
 ```
 
