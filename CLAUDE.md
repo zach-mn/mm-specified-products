@@ -21,36 +21,27 @@ To preview locally, open `index.html` directly or run `python -m http.server` in
 
 GitHub Pages (legacy build, Jekyll) serves the **`master` branch root**.
 
-| URL | Source |
-| --- | --- |
-| https://zachmn.com/mm-specified-products/ | `master` root: live site (teal/charcoal design) |
-| https://zachmn.com/mm-specified-products/preview/ | `master:/preview/`: snapshot of `redesign` for Mike to review |
+Live URL: https://zachmn.com/mm-specified-products/ (HTTPS enforced; the custom domain comes from
+the `zach-mn.github.io` user-site repo).
 
 - **`master`** is live. Anything pushed there ships right away.
-- **`redesign`** holds the new "Engineering Drawing meets Editorial" design (ink/paper/rust palette,
-  SVG cross-section hero). Its files sit at the repo root, the same layout as `master`.
-- `master/preview/` contains copies of `redesign`'s `index.html`, `styles.css` and `script.js`,
-  with `images/` → `../images/` and `catalog/` → `../catalog/` so it reuses master's assets.
-  It contains no images or PDFs of its own.
+- The site uses the "Engineering Drawing meets Editorial" design (ink/paper/rust palette, SVG
+  cross-section hero). It went live from the `redesign` branch via PR #1.
 
-### Refreshing /preview/ after changing `redesign`
+### Showing Mike a draft before going live
 
-Run this from a `master` checkout in Git Bash, after committing on `redesign`:
+Pages serves only `master`, so a branch alone isn't viewable. A past redesign was shared by copying
+the branch's `index.html`, `styles.css` and `script.js` into a `master:/preview/` folder, with asset
+paths rewritten so they reuse master's images and PDFs:
 
 ```bash
 mkdir -p preview
 for f in index.html styles.css script.js; do
-  git show redesign:$f | sed 's#\(src\|href\)="images/#\1="../images/#g; s#\(src\|href\)="catalog/#\1="../catalog/#g' > preview/$f
+  git show <branch>:$f | sed 's#\(src\|href\)="images/#="../images/#g; s#\(src\|href\)="catalog/#="../catalog/#g' > preview/$f
 done
 ```
 
-Any new image or PDF that `redesign` uses must also exist in master's `images/` or `catalog/`.
-Without it, the preview link breaks.
-
-### Going live with the redesign
-
-Merge `redesign` into `master` and delete `preview/`. Ask before you do this, because it changes
-the public site.
+Delete `preview/` once the branch is merged.
 
 ## Conventions
 
