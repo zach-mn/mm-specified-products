@@ -70,4 +70,4 @@ the public site.
 - The contact form is a placeholder (`onsubmit` → `alert`). It has no backend yet; Formspree or
   similar would be needed.
 - `images/BusinessImage5-11-26.png` (~1.9 MB) isn't referenced anywhere.
-- Because Pages runs Jekyll, this file is likely publicly reachable on the site. Keep secrets out of it.
+- `_config.yml` excludes this file from the Pages build. Add any other repo-only docs to its `exclude` list.
