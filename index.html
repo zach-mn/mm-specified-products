@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M&M Specified Products LLC</title>
+    <title>M&M Specified Products LLC — Leading Innovation Beneath the Surface</title>
+    <meta name="description" content="M&M Specified Products LLC is a consulting and specification-driven manufacturers' representative serving the underground utility industry across all 50 states.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container header-inner">
             <a href="#" class="logo">
                 <img src="images/logo.png" alt="M&M Specified Products LLC" class="logo-img">
-                <span class="logo-text">M&M Specified Products</span>
+                <span class="logo-text">
+                    <span class="logo-text-mark">M&amp;M</span>
+                    <span class="logo-text-sub">Specified Products</span>
+                </span>
             </a>
             <nav class="nav" id="nav">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#manufacturers">Manufacturers</a>
-                <a href="#catalog">Product Catalog</a>
-                <a href="#contact">Contact</a>
+                <a href="#about"><span class="nav-num">01</span>About</a>
+                <a href="#services"><span class="nav-num">02</span>Services</a>
+                <a href="#manufacturers"><span class="nav-num">03</span>Manufacturers</a>
+                <a href="#catalog"><span class="nav-num">04</span>Catalog</a>
+                <a href="#affiliations"><span class="nav-num">05</span>Affiliations</a>
+                <a href="#contact"><span class="nav-num">06</span>Contact</a>
             </nav>
             <div class="header-phone">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span class="header-phone-label">Direct</span>
                 <a href="tel:+16128686712">612.868.6712</a>
             </div>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
@@ -37,269 +42,559 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-grid-bg" aria-hidden="true"></div>
         <div class="container hero-content">
-            <h1>Leading Innovation Beneath the Surface</h1>
-            <p class="hero-tagline">Trusted expertise. Innovative solutions. Reliable infrastructure.</p>
-            <p>M&M Specified Products LLC is a consulting and specification-driven company serving the underground utility industry with innovative products, technical expertise, and an unwavering commitment to customer success.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="#manufacturers" class="btn btn-outline">Our Manufacturers</a>
+            <div class="hero-text">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-dash"></span>
+                    <span>M&amp;M Specified Products LLC · Est. Woodbury, Minnesota</span>
+                </div>
+                <h1>Leading Innovation <em>Beneath</em> the Surface.</h1>
+                <p class="hero-tagline">Trusted expertise. Innovative solutions. Reliable infrastructure.</p>
+                <p class="hero-body">M&amp;M Specified Products LLC is a consulting and specification-driven company serving the underground utility industry with innovative products, technical expertise, and an unwavering commitment to customer success.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Request a Specification</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+                    </a>
+                    <a href="#manufacturers" class="btn btn-ghost">
+                        <span>Manufacturer Partners</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Engineering cross-section illustration -->
+            <figure class="hero-figure" aria-label="Underground utility cross-section schematic">
+                <div class="hero-figure-label">
+                    <span class="figure-tag">FIG. 01</span>
+                    <span class="figure-title">Typical Utility Cross-Section · NTS</span>
+                </div>
+                <svg class="hero-svg" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+                    <defs>
+                        <pattern id="hatch-soil-a" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+                            <line x1="0" y1="0" x2="0" y2="8" stroke="#5a4a3a" stroke-width="0.5" opacity="0.5"/>
+                        </pattern>
+                        <pattern id="hatch-soil-b" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+                            <line x1="0" y1="0" x2="0" y2="10" stroke="#4a3f30" stroke-width="0.6" opacity="0.4"/>
+                        </pattern>
+                        <pattern id="hatch-clay" patternUnits="userSpaceOnUse" width="12" height="12">
+                            <path d="M 0 6 L 12 6 M 6 0 L 6 12" stroke="#3a3527" stroke-width="0.4" opacity="0.45"/>
+                        </pattern>
+                        <pattern id="hatch-bedrock" patternUnits="userSpaceOnUse" width="14" height="14" patternTransform="rotate(-30)">
+                            <line x1="0" y1="0" x2="0" y2="14" stroke="#28201a" stroke-width="0.8" opacity="0.5"/>
+                        </pattern>
+                        <radialGradient id="pipe-water" cx="0.35" cy="0.35" r="0.8">
+                            <stop offset="0%" stop-color="#4a90c4"/>
+                            <stop offset="60%" stop-color="#1d4d7a"/>
+                            <stop offset="100%" stop-color="#0E1B2C"/>
+                        </radialGradient>
+                        <radialGradient id="pipe-sewer" cx="0.35" cy="0.35" r="0.8">
+                            <stop offset="0%" stop-color="#6b6157"/>
+                            <stop offset="60%" stop-color="#3d3833"/>
+                            <stop offset="100%" stop-color="#1f1c19"/>
+                        </radialGradient>
+                        <radialGradient id="pipe-gas" cx="0.35" cy="0.35" r="0.8">
+                            <stop offset="0%" stop-color="#e8c869"/>
+                            <stop offset="60%" stop-color="#a07f2a"/>
+                            <stop offset="100%" stop-color="#4a3a10"/>
+                        </radialGradient>
+                        <linearGradient id="sky-grad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#0E1B2C"/>
+                            <stop offset="100%" stop-color="#1a2638"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Sky / above-ground -->
+                    <rect x="0" y="0" width="1200" height="80" fill="url(#sky-grad)"/>
+
+                    <!-- Stars / particles in sky -->
+                    <g opacity="0.45" fill="#F5F1E8">
+                        <circle cx="120" cy="28" r="0.8"/>
+                        <circle cx="280" cy="42" r="0.6"/>
+                        <circle cx="445" cy="18" r="0.7"/>
+                        <circle cx="620" cy="50" r="0.8"/>
+                        <circle cx="780" cy="22" r="0.5"/>
+                        <circle cx="940" cy="38" r="0.7"/>
+                        <circle cx="1080" cy="14" r="0.6"/>
+                        <circle cx="1150" cy="55" r="0.5"/>
+                    </g>
+
+                    <!-- Ground line with grass marks -->
+                    <line x1="0" y1="80" x2="1200" y2="80" stroke="#B85426" stroke-width="1.5"/>
+                    <g stroke="#B85426" stroke-width="0.8" opacity="0.6">
+                        <line x1="20" y1="80" x2="20" y2="73"/>
+                        <line x1="60" y1="80" x2="60" y2="75"/>
+                        <line x1="100" y1="80" x2="100" y2="72"/>
+                        <line x1="140" y1="80" x2="140" y2="76"/>
+                        <line x1="180" y1="80" x2="180" y2="74"/>
+                        <line x1="220" y1="80" x2="220" y2="71"/>
+                        <line x1="260" y1="80" x2="260" y2="75"/>
+                        <line x1="300" y1="80" x2="300" y2="73"/>
+                        <line x1="340" y1="80" x2="340" y2="76"/>
+                        <line x1="380" y1="80" x2="380" y2="72"/>
+                        <line x1="420" y1="80" x2="420" y2="74"/>
+                        <line x1="460" y1="80" x2="460" y2="71"/>
+                        <line x1="500" y1="80" x2="500" y2="75"/>
+                        <line x1="540" y1="80" x2="540" y2="73"/>
+                        <line x1="580" y1="80" x2="580" y2="76"/>
+                        <line x1="620" y1="80" x2="620" y2="72"/>
+                        <line x1="660" y1="80" x2="660" y2="75"/>
+                        <line x1="700" y1="80" x2="700" y2="73"/>
+                        <line x1="740" y1="80" x2="740" y2="76"/>
+                        <line x1="780" y1="80" x2="780" y2="71"/>
+                        <line x1="820" y1="80" x2="820" y2="74"/>
+                        <line x1="860" y1="80" x2="860" y2="75"/>
+                        <line x1="900" y1="80" x2="900" y2="73"/>
+                        <line x1="940" y1="80" x2="940" y2="76"/>
+                        <line x1="980" y1="80" x2="980" y2="72"/>
+                        <line x1="1020" y1="80" x2="1020" y2="74"/>
+                        <line x1="1060" y1="80" x2="1060" y2="75"/>
+                        <line x1="1100" y1="80" x2="1100" y2="71"/>
+                        <line x1="1140" y1="80" x2="1140" y2="76"/>
+                        <line x1="1180" y1="80" x2="1180" y2="73"/>
+                    </g>
+
+                    <!-- Soil strata -->
+                    <rect x="0" y="80" width="1200" height="70" fill="#6d5a44"/>
+                    <rect x="0" y="80" width="1200" height="70" fill="url(#hatch-soil-a)"/>
+
+                    <rect x="0" y="150" width="1200" height="80" fill="#5a4836"/>
+                    <rect x="0" y="150" width="1200" height="80" fill="url(#hatch-soil-b)"/>
+
+                    <rect x="0" y="230" width="1200" height="90" fill="#4a3d2e"/>
+                    <rect x="0" y="230" width="1200" height="90" fill="url(#hatch-clay)"/>
+
+                    <rect x="0" y="320" width="1200" height="60" fill="#2d2620"/>
+                    <rect x="0" y="320" width="1200" height="60" fill="url(#hatch-bedrock)"/>
+
+                    <!-- Strata boundary lines -->
+                    <line x1="0" y1="150" x2="1200" y2="150" stroke="#3a2f22" stroke-width="0.7" opacity="0.7"/>
+                    <line x1="0" y1="230" x2="1200" y2="230" stroke="#2d2620" stroke-width="0.7" opacity="0.7"/>
+                    <line x1="0" y1="320" x2="1200" y2="320" stroke="#1a1612" stroke-width="0.8" opacity="0.8"/>
+
+                    <!-- Tracer wire line (continuous reference) -->
+                    <line x1="0" y1="118" x2="1200" y2="118" stroke="#B85426" stroke-width="0.5" stroke-dasharray="3,6" opacity="0.5"/>
+                    <!-- Tracer wire animated pulse -->
+                    <line class="tracer-pulse" x1="0" y1="118" x2="1200" y2="118" stroke="#e8a070" stroke-width="1.2" stroke-dasharray="50,1150" stroke-linecap="round"/>
+
+                    <!-- Fiber / Conduit bundle (shallow right) -->
+                    <g class="util-group">
+                        <rect x="980" y="105" width="48" height="32" rx="1.5" fill="#1a1612" stroke="#B85426" stroke-width="1.2"/>
+                        <circle cx="992" cy="115" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                        <circle cx="1002" cy="115" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                        <circle cx="1012" cy="115" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                        <circle cx="992" cy="125" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                        <circle cx="1002" cy="125" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                        <circle cx="1012" cy="125" r="3" fill="none" stroke="#B85426" stroke-width="0.6"/>
+                    </g>
+
+                    <!-- Gas line (small, shallow-mid left) -->
+                    <g class="util-group">
+                        <circle cx="240" cy="175" r="18" fill="url(#pipe-gas)" stroke="#1a1612" stroke-width="1"/>
+                        <circle cx="240" cy="175" r="12" fill="none" stroke="#1a1612" stroke-width="0.8" opacity="0.6"/>
+                        <line x1="228" y1="175" x2="252" y2="175" stroke="#1a1612" stroke-width="0.5" opacity="0.5"/>
+                    </g>
+
+                    <!-- Water main (large, mid-depth) -->
+                    <g class="util-group">
+                        <circle cx="500" cy="220" r="34" fill="url(#pipe-water)" stroke="#1a1612" stroke-width="1.2"/>
+                        <circle cx="500" cy="220" r="26" fill="none" stroke="#F5F1E8" stroke-width="0.6" opacity="0.35"/>
+                        <!-- Water shimmer -->
+                        <path class="water-shimmer" d="M 478 220 Q 489 213, 500 220 T 522 220" fill="none" stroke="#F5F1E8" stroke-width="1" opacity="0.55" stroke-linecap="round"/>
+                        <path class="water-shimmer water-shimmer--delay" d="M 478 226 Q 489 219, 500 226 T 522 226" fill="none" stroke="#F5F1E8" stroke-width="0.8" opacity="0.35" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Sanitary sewer (largest, deepest) -->
+                    <g class="util-group">
+                        <circle cx="800" cy="278" r="44" fill="url(#pipe-sewer)" stroke="#1a1612" stroke-width="1.2"/>
+                        <circle cx="800" cy="278" r="34" fill="none" stroke="#F5F1E8" stroke-width="0.5" opacity="0.3"/>
+                        <line x1="770" y1="278" x2="830" y2="278" stroke="#F5F1E8" stroke-width="0.4" opacity="0.35"/>
+                    </g>
+
+                    <!-- Annotations: leader lines and mono labels -->
+                    <g class="annotation" fill="#F5F1E8" font-family="'IBM Plex Mono', monospace" font-size="9" letter-spacing="0.8">
+                        <!-- Fiber -->
+                        <line x1="1004" y1="105" x2="1004" y2="55" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <line x1="1004" y1="55" x2="1080" y2="55" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <text x="1085" y="58" opacity="0.85">FIBER · TELECOM</text>
+
+                        <!-- Gas -->
+                        <line x1="240" y1="157" x2="240" y2="40" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <line x1="240" y1="40" x2="170" y2="40" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <text x="50" y="43" opacity="0.85">NATURAL GAS · ø2"</text>
+
+                        <!-- Water -->
+                        <line x1="500" y1="186" x2="500" y2="28" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <line x1="500" y1="28" x2="580" y2="28" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <text x="585" y="31" opacity="0.85">WATER MAIN · ø8" DI</text>
+
+                        <!-- Sewer -->
+                        <line x1="800" y1="234" x2="800" y2="68" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <line x1="800" y1="68" x2="900" y2="68" stroke="#F5F1E8" stroke-width="0.4" opacity="0.7"/>
+                        <text x="905" y="71" opacity="0.85">SAN. SEWER · ø12" PVC</text>
+
+                        <!-- Tracer wire callout -->
+                        <line x1="100" y1="118" x2="100" y2="350" stroke="#B85426" stroke-width="0.4" opacity="0.6"/>
+                        <text x="20" y="367" opacity="0.85" fill="#e8a070">TRACER WIRE · CONTINUOUS</text>
+
+                        <!-- Strata labels -->
+                        <text x="1110" y="120" opacity="0.55">TOPSOIL</text>
+                        <text x="1110" y="195" opacity="0.55">SUBSOIL</text>
+                        <text x="1110" y="280" opacity="0.55">CLAY</text>
+                        <text x="1110" y="358" opacity="0.55">BEDROCK</text>
+                    </g>
+
+                    <!-- Ground level reference -->
+                    <g font-family="'IBM Plex Mono', monospace" font-size="8" fill="#B85426" letter-spacing="0.5">
+                        <text x="6" y="76" opacity="0.85">GRADE 0'-0"</text>
+                    </g>
+                </svg>
+            </figure>
+        </div>
+
+        <div class="hero-meta">
+            <div class="container hero-meta-inner">
+                <span class="meta-item"><span class="meta-key">LOC.</span> Woodbury · MN</span>
+                <span class="meta-divider" aria-hidden="true">/</span>
+                <span class="meta-item"><span class="meta-key">REACH</span> All 50 States</span>
+                <span class="meta-divider" aria-hidden="true">/</span>
+                <span class="meta-item"><span class="meta-key">EXP.</span> 25+ Years Underground</span>
+                <span class="meta-divider" aria-hidden="true">/</span>
+                <span class="meta-item"><span class="meta-key">SPEC.</span> Water · Sewer · Gas · Fiber</span>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section class="section" id="about">
+    <!-- About / Leadership -->
+    <section class="section section-about" id="about">
         <div class="container">
-            <div class="section-header">
-                <h2>About Us</h2>
-                <div class="section-divider"></div>
-            </div>
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">01</span>
+                    <span class="section-eyebrow">Leadership</span>
+                </div>
+                <h2 class="section-title">About Us</h2>
+                <div class="section-rule"></div>
+            </header>
+
             <div class="about-grid">
-                <div class="about-text">
-                    <h3 class="about-name">Mike Moore, President</h3>
-                    <p>Mike Moore is the President of M&M Specified Products, headquartered in Woodbury, Minnesota. With more than 25 years of experience in the underground utility industry, Mike has dedicated his career to advancing the infrastructure that communities rely on every day. His expertise spans water and sewer systems, telecommunications, stormwater management, and natural gas distribution, making him a trusted resource and respected leader throughout the industry.</p>
+                <article class="about-text" data-reveal data-reveal-delay="100">
+                    <div class="about-byline">
+                        <h3 class="about-name">Mike Moore</h3>
+                        <span class="about-title">President · M&amp;M Specified Products LLC</span>
+                    </div>
+                    <p class="about-lede">Mike Moore is the President of M&amp;M Specified Products, headquartered in Woodbury, Minnesota. With more than 25 years of experience in the underground utility industry, Mike has dedicated his career to advancing the infrastructure that communities rely on every day. His expertise spans water and sewer systems, telecommunications, stormwater management, and natural gas distribution, making him a trusted resource and respected leader throughout the industry.</p>
                     <p>Throughout his career, Mike has been driven by a passion for innovation, safety, and improving industry standards. He is the holder of multiple patents related to complete tracer wire systems for underground utilities and played a key role in developing the Complete Tracer Wire Specification currently housed by the Minnesota Rural Water Association. His contributions have helped establish best practices that improve the reliability, locate ability, and long-term performance of underground utility systems.</p>
                     <p>Before building his successful career in the utility industry, Mike proudly served his country as a member of the United States Army during the Gulf War. His commitment to service continued at home, where he spent seven years as a volunteer firefighter and EMT in Woodbury, Minnesota, helping protect and serve his community during times of need.</p>
-                    <p>Mike has also been actively involved in industry leadership and professional development. As a member of the Water & Sewer Distributors of America (WASDA), he served on both the Educational Scholarship Committee and the Associates Board, helping support the next generation of industry professionals while strengthening partnerships across the water and wastewater sectors.</p>
+                    <p>Mike has also been actively involved in industry leadership and professional development. As a member of the Water &amp; Sewer Distributors of America (WASDA), he served on both the Educational Scholarship Committee and the Associates Board, helping support the next generation of industry professionals while strengthening partnerships across the water and wastewater sectors.</p>
                     <p>At the heart of Mike's success is his family. He has been married to his wife, Laurie, for more than 40 years. Together they have raised two sons, both now married, and are proud grandparents to a grandson, with a granddaughter soon to join the family. Mike credits much of his personal and professional success to the support, values, and encouragement of his family.</p>
-                    <p>Whether serving his country, supporting his community, mentoring industry professionals, or developing innovative solutions for underground infrastructure, Mike's guiding principle has remained the same: leave things better than you found them. His career stands as a testament to leadership, service, innovation, and a commitment to helping others succeed.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">25+</span>
-                        <span class="stat-label">Years of Experience</span>
+                    <p class="about-coda"><em>"Whether serving his country, supporting his community, mentoring industry professionals, or developing innovative solutions for underground infrastructure, Mike's guiding principle has remained the same: leave things better than you found them."</em></p>
+                </article>
+
+                <aside class="about-stats" data-reveal data-reveal-delay="200">
+                    <div class="about-stats-head">
+                        <span class="stats-eyebrow">By the numbers</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Product Lines</span>
+                        <span class="stat-num-wrap">
+                            <span class="stat-number" data-count-to="25" data-count-suffix="+">0</span>
+                        </span>
+                        <span class="stat-rule"></span>
+                        <span class="stat-label">Years of experience</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">All 50</span>
-                        <span class="stat-label">States Served</span>
+                        <span class="stat-num-wrap">
+                            <span class="stat-number" data-count-to="4">0</span>
+                        </span>
+                        <span class="stat-rule"></span>
+                        <span class="stat-label">Product lines represented</span>
                     </div>
-                </div>
+                    <div class="stat">
+                        <span class="stat-num-wrap">
+                            <span class="stat-number-static">All&nbsp;50</span>
+                        </span>
+                        <span class="stat-rule"></span>
+                        <span class="stat-label">States served, coast to coast</span>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="section section-alt" id="services">
+    <!-- Services / Capabilities -->
+    <section class="section section-services" id="services">
         <div class="container">
-            <div class="section-header">
-                <h2>What We Do</h2>
-                <div class="section-divider"></div>
-            </div>
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">02</span>
+                    <span class="section-eyebrow">Capabilities</span>
+                </div>
+                <h2 class="section-title">What We Do</h2>
+                <div class="section-rule"></div>
+            </header>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                <article class="service-card" data-reveal data-reveal-delay="50">
+                    <div class="service-card-head">
+                        <span class="service-num">01</span>
+                        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                     </div>
                     <h3>Product Sourcing</h3>
                     <p>We locate ancillary items and coordinate with our manufacturer partners to find the right products for your project specifications.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </article>
+
+                <article class="service-card" data-reveal data-reveal-delay="100">
+                    <div class="service-card-head">
+                        <span class="service-num">02</span>
+                        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     </div>
-                    <h3>Quotations & Specifications</h3>
+                    <h3>Quotations &amp; Specifications</h3>
                     <p>We provide timely, accurate quotations and work with engineers to ensure the right products are specified for every application.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </article>
+
+                <article class="service-card" data-reveal data-reveal-delay="150">
+                    <div class="service-card-head">
+                        <span class="service-num">03</span>
+                        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <h3>Technical Support</h3>
                     <p>Our team informs engineers and municipalities about current products, technologies, and solutions available in the marketplace.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </article>
+
+                <article class="service-card" data-reveal data-reveal-delay="200">
+                    <div class="service-card-head">
+                        <span class="service-num">04</span>
+                        <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
                     </div>
                     <h3>Problem Solving</h3>
                     <p>We offer guidance and expertise to help solve complex infrastructure challenges, from product selection to installation support.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturers / Partners -->
+    <section class="section section-manufacturers" id="manufacturers">
+        <div class="container">
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">03</span>
+                    <span class="section-eyebrow">Partners</span>
                 </div>
-            </div>
-        </div>
-    </section>
+                <h2 class="section-title">Our Manufacturers</h2>
+                <div class="section-rule"></div>
+                <p class="section-lede">We proudly represent leading manufacturers in the water and wastewater industry.</p>
+            </header>
 
-    <!-- Manufacturers -->
-    <section class="section" id="manufacturers">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Manufacturers</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">We proudly represent leading manufacturers in the water and wastewater industry.</p>
-            </div>
             <div class="manufacturers-grid">
-                <a href="https://www.atkore.com/" target="_blank" rel="noopener noreferrer" class="manufacturer-card">
+                <a href="https://www.atkore.com/" target="_blank" rel="noopener noreferrer" class="manufacturer-card" data-reveal data-reveal-delay="50">
+                    <div class="manufacturer-card-tag">PRT/01</div>
                     <img src="images/atkore-logo.png" alt="Atkore" class="manufacturer-logo">
+                    <span class="manufacturer-card-link">
+                        Visit Atkore
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3v5"/></svg>
+                    </span>
                 </a>
-                <a href="https://solinastechnologies.com/" target="_blank" rel="noopener noreferrer" class="manufacturer-card">
+                <a href="https://solinastechnologies.com/" target="_blank" rel="noopener noreferrer" class="manufacturer-card" data-reveal data-reveal-delay="125">
+                    <div class="manufacturer-card-tag">PRT/02</div>
                     <img src="images/solinas-logo.svg" alt="Solinas Technologies" class="manufacturer-logo">
+                    <span class="manufacturer-card-link">
+                        Visit Solinas Technologies
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3v5"/></svg>
+                    </span>
                 </a>
-                <a href="https://slikstyx.net/" target="_blank" rel="noopener noreferrer" class="manufacturer-card">
+                <a href="https://slikstyx.net/" target="_blank" rel="noopener noreferrer" class="manufacturer-card" data-reveal data-reveal-delay="200">
+                    <div class="manufacturer-card-tag">PRT/03</div>
                     <img src="images/slikstyx-logo.png" alt="Slik Styx" class="manufacturer-logo">
+                    <span class="manufacturer-card-link">
+                        Visit Slik Styx
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3v5"/></svg>
+                    </span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Product Catalog -->
-    <section class="section section-alt" id="catalog">
+    <!-- Product Catalog / Literature -->
+    <section class="section section-catalog" id="catalog">
         <div class="container">
-            <div class="section-header">
-                <h2>Product Catalog</h2>
-                <div class="section-divider"></div>
-                <p class="section-subtitle">Download product brochures, catalogs, and specification sheets from our manufacturer partners.</p>
-            </div>
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">04</span>
+                    <span class="section-eyebrow">Literature</span>
+                </div>
+                <h2 class="section-title">Product Catalog</h2>
+                <div class="section-rule"></div>
+                <p class="section-lede">Download product brochures, catalogs, and specification sheets from our manufacturer partners.</p>
+            </header>
+
             <div class="catalog-grid">
-                <a href="catalog/SonicFinder1000_BRO_0425.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/SonicFinder1000_BRO_0425.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="40">
+                    <span class="catalog-num">01</span>
                     <div class="catalog-info">
                         <h3>SonicFinder 1000</h3>
                         <p>Product brochure</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
-                <a href="catalog/Atkore C900 Submittal - SHORT.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/Atkore C900 Submittal - SHORT.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="80">
+                    <span class="catalog-num">02</span>
                     <div class="catalog-info">
                         <h3>Atkore C900 Submittal</h3>
                         <p>Product submittal sheet</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
-                <a href="catalog/PVC-and-HDPE-Water-Catalog.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/PVC-and-HDPE-Water-Catalog.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="120">
+                    <span class="catalog-num">03</span>
                     <div class="catalog-info">
-                        <h3>PVC & HDPE Water Catalog</h3>
+                        <h3>PVC &amp; HDPE Water Catalog</h3>
                         <p>Full product catalog</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
-                <a href="catalog/Heritage-ATKORE CATALOG PVC-HDPE PIPE FOR MUNICIPAL APPLICATIONS.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/Heritage-ATKORE CATALOG PVC-HDPE PIPE FOR MUNICIPAL APPLICATIONS.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="160">
+                    <span class="catalog-num">04</span>
                     <div class="catalog-info">
                         <h3>Heritage-Atkore PVC-HDPE Pipe</h3>
                         <p>Municipal applications catalog</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
-                <a href="catalog/SLIKSTYX_Quickdraw_SprayCanHolster.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/SLIKSTYX_Quickdraw_SprayCanHolster.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="200">
+                    <span class="catalog-num">05</span>
                     <div class="catalog-info">
                         <h3>Slik Styx Quickdraw Spray Can Holster</h3>
                         <p>Product brochure</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
-                <a href="catalog/SLIKSTYX_PriceSheet.pdf" target="_blank" class="catalog-card">
-                    <div class="catalog-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
+                <a href="catalog/SLIKSTYX_PriceSheet.pdf" target="_blank" class="catalog-card" data-reveal data-reveal-delay="240">
+                    <span class="catalog-num">06</span>
                     <div class="catalog-info">
                         <h3>Slik Styx Price Sheet</h3>
                         <p>Product pricing</p>
                     </div>
-                    <div class="catalog-download">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        <span>PDF</span>
-                    </div>
+                    <span class="catalog-action">
+                        <span class="catalog-action-label">PDF</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 1v9M3 6l4 4 4-4M1 13h12"/></svg>
+                    </span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Affiliations -->
-    <section class="section">
+    <section class="section section-affiliations" id="affiliations">
         <div class="container">
-            <div class="section-header">
-                <h2>Industry Affiliations</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="affiliations-grid">
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">05</span>
+                    <span class="section-eyebrow">Affiliations</span>
+                </div>
+                <h2 class="section-title">Industry Affiliations</h2>
+                <div class="section-rule"></div>
+            </header>
+
+            <div class="affiliations-grid" data-reveal data-reveal-delay="100">
                 <a href="https://www.wasda.com/" target="_blank" rel="noopener noreferrer" class="affiliation" aria-label="Water & Sewer Distributors of America (WASDA)">
+                    <div class="affiliation-tag">MEMBER</div>
                     <img src="images/wasda-logo.png" alt="WASDA — Water & Sewer Distributors of America" class="affiliation-logo">
+                    <div class="affiliation-meta">
+                        <span class="affiliation-name">Water &amp; Sewer Distributors of America</span>
+                        <span class="affiliation-roles">Educational Scholarship Committee · Associates Board</span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section class="section section-alt" id="contact">
+    <section class="section section-contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Contact Us</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We'd love to hear from you. Reach out for product inquiries, quotations, or technical support.</p>
-                    <div class="contact-detail">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>612.868.6712</span>
-                    </div>
-                    <div class="contact-detail">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <span>MichaelMoore@mmspecifiedproductsllc.com</span>
-                    </div>
-                    <div class="contact-detail">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>Woodbury, MN</span>
-                    </div>
+            <header class="section-head" data-reveal>
+                <div class="section-head-meta">
+                    <span class="section-num">06</span>
+                    <span class="section-eyebrow">Connect</span>
                 </div>
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Form submission placeholder');">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="section-rule"></div>
+            </header>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal data-reveal-delay="80">
+                    <h3 class="contact-info-head">Get in touch.</h3>
+                    <p class="contact-info-lede">We'd love to hear from you. Reach out for product inquiries, quotations, or technical support.</p>
+
+                    <dl class="contact-details">
+                        <div class="contact-detail">
+                            <dt>Direct</dt>
+                            <dd><a href="tel:+16128686712">612.868.6712</a></dd>
+                        </div>
+                        <div class="contact-detail">
+                            <dt>Email</dt>
+                            <dd><a href="mailto:MichaelMoore@mmspecifiedproductsllc.com">MichaelMoore@<wbr>mmspecifiedproductsllc.com</a></dd>
+                        </div>
+                        <div class="contact-detail">
+                            <dt>Office</dt>
+                            <dd>Woodbury, Minnesota</dd>
+                        </div>
+                        <div class="contact-detail">
+                            <dt>Hours</dt>
+                            <dd>Mon–Fri · By appointment</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <form class="contact-form" data-reveal data-reveal-delay="160" onsubmit="event.preventDefault(); alert('Form submission placeholder');">
+                    <div class="contact-form-head">
+                        <span class="contact-form-tag">FORM 06.01</span>
+                        <h3>Send a Message</h3>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
                         </div>
                         <div class="form-group">
                             <label for="company">Company</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="company" autocomplete="organization">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Send Message</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -308,19 +603,47 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-inner">
+            <div class="footer-top">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="M&M Specified Products LLC" class="footer-logo-img">
-                    <span class="footer-name">M&M Specified Products LLC</span>
+                    <img src="images/logo.png" alt="" class="footer-logo-img">
+                    <div class="footer-brand-text">
+                        <span class="footer-brand-mark">M&amp;M Specified Products LLC</span>
+                        <span class="footer-brand-sub">Consulting · Specification · Underground Utility</span>
+                    </div>
                 </div>
-                <nav class="footer-nav">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#manufacturers">Manufacturers</a>
-                    <a href="#catalog">Product Catalog</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                <p class="footer-copy">&copy; 2026 M&M Specified Products LLC. All rights reserved.</p>
+                <div class="footer-col">
+                    <span class="footer-col-head">Sections</span>
+                    <nav class="footer-nav">
+                        <a href="#about">01 · About</a>
+                        <a href="#services">02 · Services</a>
+                        <a href="#manufacturers">03 · Manufacturers</a>
+                        <a href="#catalog">04 · Catalog</a>
+                        <a href="#affiliations">05 · Affiliations</a>
+                        <a href="#contact">06 · Contact</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-head">Direct</span>
+                    <ul class="footer-contact">
+                        <li><a href="tel:+16128686712">612.868.6712</a></li>
+                        <li><a href="mailto:MichaelMoore@mmspecifiedproductsllc.com">MichaelMoore@<wbr>mmspecifiedproductsllc.com</a></li>
+                        <li>Woodbury, MN</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-head">Industry</span>
+                    <ul class="footer-meta-list">
+                        <li>Water · Sewer</li>
+                        <li>Stormwater</li>
+                        <li>Natural Gas</li>
+                        <li>Telecom &amp; Fiber</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-rule"></div>
+            <div class="footer-bottom">
+                <span class="footer-copy">&copy; 2026 M&amp;M Specified Products LLC · All rights reserved.</span>
+                <span class="footer-tag">Leading Innovation Beneath the Surface.</span>
             </div>
         </div>
     </footer>
