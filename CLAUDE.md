@@ -10,10 +10,10 @@ Plain static site. No build step, no package manager, no framework, no tests.
 
 - `index.html` — the whole site, one page with anchor sections
 - `styles.css` — all styles; design tokens are CSS custom properties in `:root`
-- `script.js` — vanilla ES5 IIFE: mobile nav, header scroll state, scroll-reveal, stat counters
+- `script.js` — vanilla ES5 IIFE: mobile nav toggle, contact form → `mailto:` link
 - `images/` — logos (`logo.png`, manufacturer and affiliation logos)
-- `catalog/` — manufacturer PDFs linked from the Product Catalog section
-- Fonts: IBM Plex Serif / Sans / Mono from Google Fonts (only external dependency)
+- `catalog/` — manufacturer PDFs, listed under each manufacturer in the Manufacturers section
+- Font: Public Sans from Google Fonts (only external dependency)
 
 To preview locally, open `index.html` directly or run `python -m http.server` in the repo root.
 
@@ -46,18 +46,17 @@ Delete `preview/` once the branch is merged.
 ## Conventions
 
 - Push to `master` or publish anything live only after confirming with Zach.
-- The page is static HTML. To add a manufacturer or catalog PDF, copy an existing card in
-  `index.html` and renumber it: `PRT/0N` tags, `catalog-num`, and `data-reveal-delay` steps
-  (manufacturers +75ms, catalog +40ms).
-- Sections are numbered 01–06 in the nav (`nav-num`) and in each `section-num`. Keep the two in sync.
-- Scroll-reveal: `[data-reveal]` elements stay visible unless JS adds `html.js-ready`, so the
-  content still shows without JS. Keep that fallback. `prefers-reduced-motion` is respected in CSS.
-- Responsive breakpoints in `styles.css`: 1100, 900, 768, 480px.
+- Design: white page, one deep green (`--green`), Public Sans only, sentence case everywhere.
+  No section numbers, eyebrow labels, monospace text or scroll animations. Keep it that way.
+- Desktop sections use `.split`: heading and intro on the left, content on the right.
+- To add a catalog PDF, add an `<li>` to that manufacturer's `.docs` list with title, document
+  type and file size (`Product brochure, PDF, 1.8 MB`). A new manufacturer is a new `.maker` block.
+- Responsive breakpoints in `styles.css`: 900 and 760px.
 - Match the existing style: 4-space indent, ES5 JS (`var`, no modules), BEM-ish class names.
 - The working tree is CRLF on Windows (`core.autocrlf=true`). There is no `.gitattributes`.
 
 ## Known gaps
 
-- The contact form is a placeholder (`onsubmit` → `alert`). It has no backend yet; Formspree or
-  similar would be needed.
+- The contact form has no backend. `script.js` turns it into a `mailto:` link that opens the
+  visitor's email app. A service like Formspree would let it send directly.
 - `_config.yml` excludes this file from the Pages build. Add any other repo-only docs to its `exclude` list.
