@@ -1,139 +1,134 @@
 (function () {
     'use strict';
 
+    var GALLERY_LIMIT = 9; // photos shown before "Show all photos"
+
     function ready(fn) {
         if (document.readyState !== 'loading') fn();
         else document.addEventListener('DOMContentLoaded', fn);
     }
 
     ready(function () {
-        // Enable JS-dependent visual states only once we know JS is running.
-        // Without this class, all [data-reveal] content stays visible.
-        document.documentElement.classList.add('js-ready');
-
         var header = document.getElementById('header');
-        var toggle = document.getElementById('mobile-toggle');
+        var toggle = document.getElementById('nav-toggle');
         var nav = document.getElementById('nav');
 
         /* ---------- Mobile navigation ---------- */
+        function setNav(open) {
+            nav.classList.toggle('is-open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
         if (toggle && nav) {
             toggle.addEventListener('click', function () {
-                nav.classList.toggle('open');
+                setNav(!nav.classList.contains('is-open'));
             });
-            nav.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    nav.classList.remove('open');
-                });
+            Array.prototype.forEach.call(nav.querySelectorAll('a'), function (link) {
+                link.addEventListener('click', function () { setNav(false); });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+                    setNav(false);
+                    toggle.focus();
+                }
             });
         }
 
-        /* ---------- Header scroll state ---------- */
-        var lastScrolled = false;
+        /* ---------- Header border once scrolled ---------- */
         function updateHeader() {
-            var scrolled = window.scrollY > 24;
-            if (scrolled !== lastScrolled) {
-                header.classList.toggle('is-scrolled', scrolled);
-                lastScrolled = scrolled;
-            }
+            header.classList.toggle('is-scrolled', window.scrollY > 8);
         }
         updateHeader();
         window.addEventListener('scroll', updateHeader, { passive: true });
 
-        /* ---------- Reveal on scroll ---------- */
-        var revealEls = document.querySelectorAll('[data-reveal]');
+        /* ---------- Photo gallery ---------- */
+        var gallery = document.getElementById('gallery');
+        var lightbox = document.getElementById('lightbox');
+        var photos = gallery ? Array.prototype.slice.call(gallery.querySelectorAll('a.photo')) : [];
 
-        // Apply per-element transition delays from data-reveal-delay
-        revealEls.forEach(function (el) {
-            var delay = el.getAttribute('data-reveal-delay');
-            if (delay) el.style.setProperty('--reveal-delay', delay + 'ms');
-        });
+        // Collapse long galleries behind a "Show all photos" button.
+        var items = gallery ? gallery.children : [];
+        if (items.length > GALLERY_LIMIT) {
+            for (var i = GALLERY_LIMIT; i < items.length; i++) items[i].classList.add('is-hidden');
 
-        var revealObserver = null;
-
-        function revealNow(el) {
-            if (!el.classList.contains('is-revealed')) {
-                el.classList.add('is-revealed');
-                if (revealObserver) revealObserver.unobserve(el);
-            }
-        }
-
-        function revealSection(hash) {
-            if (!hash || hash.length < 2) return;
-            var section;
-            try { section = document.querySelector(hash); } catch (e) { return; }
-            if (!section) return;
-            if (section.hasAttribute('data-reveal')) revealNow(section);
-            section.querySelectorAll('[data-reveal]').forEach(revealNow);
-        }
-
-        if ('IntersectionObserver' in window) {
-            revealObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-revealed');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
-
-            revealEls.forEach(function (el) { revealObserver.observe(el); });
-        } else {
-            revealEls.forEach(function (el) { el.classList.add('is-revealed'); });
-        }
-
-        // Anchor-jump fix: when the URL hash changes (nav click, deep link),
-        // reveal everything inside the target section right away so the user
-        // never lands on a "blank" section while the observer thinks about it.
-        if (window.location.hash) revealSection(window.location.hash);
-        window.addEventListener('hashchange', function () {
-            revealSection(window.location.hash);
-        });
-        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-            link.addEventListener('click', function () {
-                var hash = link.getAttribute('href');
-                if (hash && hash.length > 1) revealSection(hash);
+            var more = document.createElement('div');
+            more.className = 'gallery-more';
+            more.innerHTML = '<button type="button" class="btn btn-secondary">Show all ' + items.length + ' photos</button>';
+            gallery.parentNode.insertBefore(more, gallery.nextSibling);
+            more.firstChild.addEventListener('click', function () {
+                Array.prototype.forEach.call(items, function (li) { li.classList.remove('is-hidden'); });
+                more.parentNode.removeChild(more);
             });
-        });
-
-        /* ---------- Stat counters ---------- */
-        var counters = document.querySelectorAll('[data-count-to]');
-
-        function animateCounter(el) {
-            var target = parseInt(el.getAttribute('data-count-to'), 10);
-            var suffix = el.getAttribute('data-count-suffix') || '';
-            var duration = 1600;
-            var startTime = null;
-
-            function step(now) {
-                if (startTime === null) startTime = now;
-                var elapsed = now - startTime;
-                var t = Math.min(1, elapsed / duration);
-                // easeOutQuart
-                var eased = 1 - Math.pow(1 - t, 4);
-                var current = Math.round(target * eased);
-                el.textContent = current + suffix;
-                if (t < 1) requestAnimationFrame(step);
-                else el.textContent = target + suffix;
-            }
-            requestAnimationFrame(step);
         }
 
-        if ('IntersectionObserver' in window && counters.length) {
-            var counterObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        counterObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+        // Without <dialog> support, photo links simply open the image file.
+        if (lightbox && typeof lightbox.showModal === 'function' && photos.length) {
+            var img = document.getElementById('lightbox-img');
+            var caption = document.getElementById('lightbox-caption');
+            var current = 0;
+            var opener = null;
 
-            counters.forEach(function (c) { counterObserver.observe(c); });
-        } else {
-            counters.forEach(function (c) {
-                var target = c.getAttribute('data-count-to');
-                var suffix = c.getAttribute('data-count-suffix') || '';
-                c.textContent = target + suffix;
+            function show(index) {
+                current = (index + photos.length) % photos.length;
+                var link = photos[current];
+                var thumb = link.querySelector('img');
+                var text = link.querySelector('.photo-caption');
+                img.src = link.getAttribute('href');
+                img.alt = thumb ? thumb.alt : '';
+                caption.textContent = text ? text.textContent : '';
+                caption.hidden = !text;
+            }
+
+            photos.forEach(function (link, index) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    opener = link;
+                    show(index);
+                    lightbox.showModal();
+                });
+            });
+
+            var single = photos.length < 2;
+            lightbox.querySelector('[data-action="prev"]').hidden = single;
+            lightbox.querySelector('[data-action="next"]').hidden = single;
+
+            lightbox.addEventListener('click', function (e) {
+                var action = e.target.getAttribute('data-action');
+                if (action === 'close' || e.target === lightbox) lightbox.close();
+                else if (action === 'prev') show(current - 1);
+                else if (action === 'next') show(current + 1);
+            });
+
+            lightbox.addEventListener('keydown', function (e) {
+                if (single) return;
+                if (e.key === 'ArrowLeft') show(current - 1);
+                else if (e.key === 'ArrowRight') show(current + 1);
+            });
+
+            lightbox.addEventListener('close', function () {
+                img.removeAttribute('src');
+                if (opener) opener.focus();
+            });
+        }
+
+        /* ---------- Contact form → pre-filled email ---------- */
+        var form = document.getElementById('contact-form');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var get = function (id) { return document.getElementById(id).value.trim(); };
+                var name = get('name');
+                var company = get('company');
+                var lines = [get('message'), '', name];
+                if (company) lines.push(company);
+                lines.push(get('email'));
+                if (get('phone')) lines.push(get('phone'));
+
+                var subject = 'Website inquiry from ' + name + (company ? ', ' + company : '');
+                var to = form.getAttribute('action').replace(/^mailto:/, '');
+                window.location.href = 'mailto:' + to +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(lines.join('\n'));
             });
         }
     });
