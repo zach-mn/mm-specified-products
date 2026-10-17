@@ -27,6 +27,8 @@ the `zach-mn.github.io` user-site repo).
 - **`master`** is live. Anything pushed there ships right away.
 - The site uses the "Engineering Drawing meets Editorial" design (ink/paper/rust palette, SVG
   cross-section hero). It went live from the `redesign` branch via PR #1.
+- **`redesign-v2`** is an unmerged, simpler redesign (white page, deep green, Public Sans, contact
+  form → `mailto:`). Its own `CLAUDE.md` describes its conventions; follow that one when working there.
 
 ### Showing Mike a draft before going live
 
@@ -56,8 +58,22 @@ Delete `preview/` once the branch is merged.
 - Match the existing style: 4-space indent, ES5 JS (`var`, no modules), BEM-ish class names.
 - The working tree is CRLF on Windows (`core.autocrlf=true`). There is no `.gitattributes`.
 
+## Local-only files
+
+Zach's working folder (`C:\Users\Zach\MM_Website`) holds client notes that are gitignored and never
+published:
+
+- `website-content-worksheet.txt` — the content questionnaire sent to Mike
+- `WebsiteInformation6-5-26.docx.md` — Mike's answers (contact info, bio, stats, hero copy). This is
+  the source of truth for site copy; its content is already on the live site.
+- `catalog/BusinessImage5-11-26.png` — Mike's business graphic, intentionally removed from the repo
+
+Anything committed under `catalog/` or `images/` becomes publicly downloadable once pushed, so
+confirm with Zach before adding client files there.
+
 ## Known gaps
 
 - The contact form is a placeholder (`onsubmit` → `alert`). It has no backend yet; Formspree or
   similar would be needed.
-- `_config.yml` excludes this file from the Pages build. Add any other repo-only docs to its `exclude` list.
+- `_config.yml` excludes `CLAUDE.md` and `README.md` from the Pages build. Add any other repo-only
+  docs to its `exclude` list.

@@ -1,0 +1,14 @@
+# Local client notes (see CLAUDE.md "Local-only files")
+website-content-worksheet.txt
+WebsiteInformation6-5-26.docx.md
+catalog/BusinessImage5-11-26.png
+
+# Claude Code personal settings
+.claude/settings.local.json
+CLAUDE.local.md
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
