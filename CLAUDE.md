@@ -27,13 +27,15 @@ Live URL: https://zachmn.com/mm-specified-products/ (HTTPS enforced; the custom 
 the `zach-mn.github.io` user-site repo).
 
 - **`master`** is live. Anything pushed there ships right away.
-- `master` currently runs the "Engineering Drawing meets Editorial" design (ink/paper/rust palette,
-  SVG cross-section hero). It went live from the `redesign` branch via PR #1.
-- **`redesign-v3`** is the newest redesign: white page, deep blue `--brand`, Barlow type, and an
-  APWA locate-color strip (blue water, green sewer, yellow gas, orange telecom) as the one accent.
-  Five sections: About, Services, Products, Photos, Contact. The conventions below describe v3.
-- **`redesign-v2`** is an unmerged, simpler redesign (white page, deep green, Public Sans, contact
-  form → `mailto:`). Its own `CLAUDE.md` describes its conventions; follow that one when working there.
+- `master` runs the v3 design: white page, deep blue `--brand`, Barlow type, and an APWA
+  locate-color strip (blue water, green sewer, yellow gas, orange telecom) as the one accent.
+  Five sections: About, Services, Products, Photos, Contact. The conventions below describe it.
+  It went live from the `redesign-v3` branch.
+- Earlier designs are kept as backup branches. Don't merge them; each has its own `CLAUDE.md`.
+  - **`backup/v1-editorial`**: the "Engineering Drawing meets Editorial" design (ink/paper/rust
+    palette, SVG cross-section hero) that was live before v3.
+  - **`backup/v2-green`**: an unmerged redesign (white page, deep green, Public Sans). Same commit
+    as the older `redesign-v2` branch.
 
 ### Showing Mike a draft before going live
 
